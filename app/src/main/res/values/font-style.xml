@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="appTitle">
+        <item name="android:textSize">32sp</item>
+        <item name="lineHeight">18sp</item>
+        <item name="fontWeight">500</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="movieItemTitle">
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">18sp</item>
+        <item name="fontWeight">1000</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="movieItemGenre">
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">18sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/blue_dark_50</item>
+    </style>
+
+    <style name="movieTitle">
+        <item name="android:textSize">24sp</item>
+        <item name="fontWeight">400</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="movieRate">
+        <item name="android:textSize">32sp</item>
+        <item name="lineHeight">18sp</item>
+        <item name="fontWeight">700</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="movieItemDescription">
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">18sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="mainTextScreen">
+        <item name="android:textSize">24sp</item>
+        <item name="lineHeight">32sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/black_70</item>
+    </style>
+</resources>

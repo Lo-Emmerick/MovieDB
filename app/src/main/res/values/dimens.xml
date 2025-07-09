@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Border Radius -->
+    <dimen name="border_radius_sm">4dp</dimen>
+    <dimen name="border_radius_medium">8dp</dimen>
+
+    <!-- Spacing -->
+    <dimen name="spacing_none">0dp</dimen>
+    <dimen name="spacing_xs_nano">1dp</dimen>
+    <dimen name="spacing_s_nano">2dp</dimen>
+    <dimen name="spacing_nano">4dp</dimen>
+    <dimen name="spacing_s">6dp</dimen>
+    <dimen name="spacing_different">7dp</dimen>
+    <dimen name="spacing_xs">8dp</dimen>
+    <dimen name="spacing_sx">10dp</dimen>
+    <dimen name="spacing_xxs">12dp</dimen>
+    <dimen name="spacing_xsm">14dp</dimen>
+    <dimen name="spacing_sm">16dp</dimen>
+    <dimen name="spacing_smedium">20dp</dimen>
+    <dimen name="spacing_medium">24dp</dimen>
+    <dimen name="spacing_lm">26dp</dimen>
+    <dimen name="spacing_sbig">28dp</dimen>
+    <dimen name="spacing_big">32dp</dimen>
+    <dimen name="spacing_xbig">40dp</dimen>
+    <dimen name="spacing_large">48dp</dimen>
+    <dimen name="spacing_xlarge">56dp</dimen>
+    <dimen name="spacing_double_big">64dp</dimen>
+
+    <!-- Font size -->
+    <dimen name="font_xs">8sp</dimen>
+    <dimen name="font_xs_small">10sp</dimen>
+    <dimen name="font_xxs">12sp</dimen>
+    <dimen name="font_xsm">14sp</dimen>
+    <dimen name="font_sm">16sp</dimen>
+    <dimen name="font_xs_medium">20sp</dimen>
+    <dimen name="font_s_medium">22sp</dimen>
+    <dimen name="font_medium">24sp</dimen>
+    <dimen name="font_big">32sp</dimen>
+    <dimen name="font_xbig">40sp</dimen>
+    <dimen name="font_large">48sp</dimen>
+    <dimen name="font_xlarge">56sp</dimen>
+    <dimen name="font_double_big">64sp</dimen>
+
+</resources>

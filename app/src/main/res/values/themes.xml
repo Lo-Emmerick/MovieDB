@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.ListCastPhoto" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/red</item>
+    </style>
+
+    <style name="Base.Theme.MovieDB" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#3D121827</item>
+    </style>
+
+    <style name="Base.Theme.Home" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:color">@color/black</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Base.Theme.Details" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+    </style>
+</resources>

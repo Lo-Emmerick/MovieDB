@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#80000000</color>
+
+    <!-- Black % -->
+    <color name="black_100">#000000</color>
+    <color name="black_85">#1F1F1F</color>
+    <color name="black_75">#404040</color>
+    <color name="black_70">#5F5F5F</color>
+    <color name="black_65">#808080</color>
+    <color name="black_60">#999999</color>
+    <color name="black_45">#B3B3B3</color>
+    <color name="black_30">#C8C8C8</color>
+    <color name="black_15">#E0E0E0</color>
+    <color name="black_05">#F7F7F7</color>
+
+    <!-- Blue % -->
+    <color name="blue_light">#E9F9F9</color>
+
+    <!-- Blue Dark % -->
+    <color name="blue_dark_50">#3D121827</color>
+    <color name="blue_dark_30">#1F435F</color>
+    <color name="blue_dark">#121827</color>
+
+    <!-- App Light -->
+    <color name="red">#ED1941</color>
+    <color name="text_input_gray">#6d7278</color>
+
+    <color name="gray">#40767680</color>
+
+    <color name="icon">#FF000000</color>
+    <color name="radio_Button">#d7d7d7</color>
+    <color name="radio_Button_text_1">#263238</color>
+
+</resources>
