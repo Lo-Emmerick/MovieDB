@@ -4,6 +4,7 @@ import com.example.moviedb.const.ApiConst.TOKEN
 import com.example.moviedb.model.DetailsCredits
 import com.example.moviedb.model.DetailsMovie
 import com.example.moviedb.model.DetailsPhotos
+import com.example.moviedb.model.GenreMovie
 import com.example.moviedb.model.MovieList
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -35,4 +36,7 @@ interface Endpoint {
     suspend fun searchMovies(
         @Query("query") movieName: String,
     ): MovieList
+
+    @GET("genre/movie/list$TOKEN")
+    suspend fun getGenres(): GenreMovie
 }

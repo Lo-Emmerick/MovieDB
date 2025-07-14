@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.example.moviedb.databinding.ItemHomeBinding
-import com.example.moviedb.model.Movie
+import com.example.moviedb.model.MovieScreen
 
 class HomeAdapter(
-    private val items: List<Movie>,
+    private val items: List<MovieScreen>,
     private val listener: HomeListener
 ) : Adapter<HomeViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {

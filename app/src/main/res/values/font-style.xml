@@ -18,7 +18,6 @@
         <item name="android:textSize">12sp</item>
         <item name="lineHeight">18sp</item>
         <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textColor">@color/blue_dark_50</item>
     </style>
 
     <style name="movieTitle">

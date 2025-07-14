@@ -1,10 +1,9 @@
 package com.example.moviedb.ui.home
 
-import com.example.moviedb.model.DetailsMovie
-import com.example.moviedb.model.Movie
+import com.example.moviedb.model.MovieScreen
 
 sealed interface HomeState {
-    data class Success(val result: List<Movie>) : HomeState
+    data class Success(val result: List<MovieScreen>) : HomeState
     object Loading : HomeState
     object Empty : HomeState
     object Error : HomeState

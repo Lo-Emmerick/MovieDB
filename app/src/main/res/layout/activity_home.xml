@@ -94,6 +94,7 @@
     <include
         android:id="@+id/state_error"
         layout="@layout/error"
+        android:visibility="gone"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -116,6 +117,7 @@
     <include
         android:id="@+id/state_empty"
         layout="@layout/empty"
+        android:visibility="gone"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

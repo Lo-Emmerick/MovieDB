@@ -38,14 +38,4 @@
         app:layout_constraintTop_toBottomOf="@+id/title"
         style="@style/movieItemGenre"
         tools:text="Crime"/>
-
-    <TextView
-        android:id="@+id/description"
-        android:alpha="0.5"
-        style="@style/movieItemDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/genre"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        tools:text=" • 22-10-2019 | 7.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

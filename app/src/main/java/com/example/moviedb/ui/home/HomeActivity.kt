@@ -9,7 +9,8 @@ import androidx.core.view.isVisible
 import com.example.moviedb.databinding.ActivityHomeBinding
 import com.example.moviedb.ui.home.adapter.HomeAdapter
 import com.example.moviedb.ui.home.adapter.HomeListener
-import com.example.moviedb.model.Movie
+import com.example.moviedb.model.MovieAPI
+import com.example.moviedb.model.MovieScreen
 import com.example.moviedb.navigation.details.DetailsNavigation
 import com.example.moviedb.navigation.details.DetailsNavigationImpl
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -25,7 +26,7 @@ class HomeActivity : ComponentActivity(), HomeListener {
         setContentView(binding.root)
         bindObserver()
         bindListener()
-        viewModel.getNowPlaying()
+        viewModel.getGenres()
     }
 
     @SuppressLint("ServiceCast")
@@ -78,6 +79,10 @@ class HomeActivity : ComponentActivity(), HomeListener {
                 is HomeState.Success -> showSuccessScreen(it.result)
             }
         }
+
+        viewModel.genres.observe(this){
+            viewModel.getNowPlaying()
+        }
     }
 
     private fun showEmptyState() {
@@ -94,9 +99,9 @@ class HomeActivity : ComponentActivity(), HomeListener {
         binding.stateLoading.root.isVisible = true
     }
 
-    private fun showSuccessScreen(movieList: List<Movie>) {
+    private fun showSuccessScreen(movieAPIList: List<MovieScreen>) {
         binding.recyclerView.isVisible = true
-        binding.recyclerView.adapter = HomeAdapter(movieList, this)
+        binding.recyclerView.adapter = HomeAdapter(movieAPIList, this)
     }
 
     private fun setDefaultState() {
@@ -106,7 +111,7 @@ class HomeActivity : ComponentActivity(), HomeListener {
         binding.stateEmpty.root.isVisible = false
     }
 
-    override fun onClickItem(item: Movie) {
+    override fun onClickItem(item: MovieScreen) {
         val intent = navigationDetails.getDetailsIntent(baseContext, item.id)
         startActivity(intent)
     }

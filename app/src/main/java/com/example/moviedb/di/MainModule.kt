@@ -4,6 +4,8 @@ import com.example.moviedb.const.ApiConst.BASE_URL
 import com.example.moviedb.network.Endpoint
 import com.example.moviedb.repository.details.DetailsRepository
 import com.example.moviedb.repository.details.DetailsRepositoryImpl
+import com.example.moviedb.repository.genres.GenresRepository
+import com.example.moviedb.repository.genres.GenresRepositoryImpl
 import com.example.moviedb.repository.home.HomeRepository
 import com.example.moviedb.repository.home.HomeRepositoryImpl
 import com.example.moviedb.ui.details.DetailsViewModel
@@ -17,10 +19,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 val loadRepositories = module {
     single{HomeRepositoryImpl(api = get()) as HomeRepository}
     single{DetailsRepositoryImpl(api = get()) as DetailsRepository}
+    single {GenresRepositoryImpl(api = get()) as GenresRepository}
 }
 
 val loadViewModels = module {
-    viewModel{ HomeViewModel(repository = get())}
+    viewModel{ HomeViewModel(repository = get(), repositoryGenres = get())}
     viewModel{ DetailsViewModel(repository = get())}
     viewModel{ ListDetailsViewModel(repository = get())}
 }
