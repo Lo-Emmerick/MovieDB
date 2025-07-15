@@ -25,6 +25,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <include
+                android:id="@+id/image_empty"
+                layout="@layout/empty_image"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
             <View
                 android:id="@+id/blurOverlay"
                 android:layout_width="match_parent"
@@ -244,6 +254,7 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view_photo"
+                    android:layout_marginTop="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:orientation="horizontal"
@@ -256,12 +267,12 @@
                     android:id="@+id/photo_message"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
                     android:padding="16dp"
                     android:text="No photo available"
                     android:textAlignment="center"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
-                    android:textStyle="bold"
-                    android:visibility="gone"/>
+                    android:textStyle="bold" />
 
                 <include
                     android:id="@+id/state_photo_loading"

@@ -38,4 +38,16 @@
         app:layout_constraintTop_toBottomOf="@+id/title"
         style="@style/movieItemGenre"
         tools:text="Crime"/>
+
+    <include
+        android:id="@+id/image_empty"
+        layout="@layout/empty_image"
+        android:layout_width="135dp"
+        android:layout_height="270dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
+/>
 </androidx.constraintlayout.widget.ConstraintLayout>

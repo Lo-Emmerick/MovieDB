@@ -112,10 +112,14 @@ class DetailsActivity : AppCompatActivity() {
     private fun showSuccessState(detailsMovie: DetailsMovie) {
         setContentView(binding.root)
         binding.stateSuccess.isVisible = true
-        Glide.with(binding.imageDetails)
-            .load(POSTER_PATH + detailsMovie.backdrop_path)
-            .into(binding.imageDetails)
 
+        if (detailsMovie.backdrop_path.isNullOrEmpty()){
+            binding.imageEmpty.root.isVisible = true
+        } else {
+            Glide.with(binding.imageDetails)
+                .load(POSTER_PATH + detailsMovie.backdrop_path)
+                .into(binding.imageDetails)
+        }
         binding.nameFilmDetails.text = detailsMovie.title
         binding.scoreFilm.text = detailsMovie.vote_average.toString()
         binding.timeMovie.text = detailsMovie.runtime.getMovieRunTime()

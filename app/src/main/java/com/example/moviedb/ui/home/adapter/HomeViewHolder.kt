@@ -1,6 +1,7 @@
 package com.example.moviedb.ui.home.adapter
 
 import android.util.Log
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.example.moviedb.const.ApiConst.POSTER_PATH
@@ -19,10 +20,14 @@ class HomeViewHolder(
     private fun bindView(item: MovieScreen) {
         binding.title.text = item.title
         binding.genre.text = item.genre + " • " + item.release_date.substring(0,4) + " | " + item.vote_average.toString().substring(0,3)
-        Glide.with(binding.backdrop)
-            .load(POSTER_PATH +item.poster_path)
-            .fitCenter()
-            .into(binding.backdrop)
+        if (item.poster_path.isNullOrEmpty()){
+            binding.imageEmpty.root.isVisible = true
+        } else {
+            Glide.with(binding.backdrop)
+                .load(POSTER_PATH + item.poster_path)
+                .fitCenter()
+                .into(binding.backdrop)
+        }
     }
 
     private fun bindClick(item: MovieScreen) {
