@@ -1,5 +1,7 @@
 package com.example.moviedb.di
 
+import com.example.moviedb.business.home.HomeBusiness
+import com.example.moviedb.business.home.HomeBusinessImpl
 import com.example.moviedb.const.ApiConst.BASE_URL
 import com.example.moviedb.network.Endpoint
 import com.example.moviedb.repository.details.DetailsRepository
@@ -22,8 +24,12 @@ val loadRepositories = module {
     single {GenresRepositoryImpl(api = get()) as GenresRepository}
 }
 
+val loadBusiness = module {
+    single{HomeBusinessImpl( repository = get(), repositoryGenres = get()) as HomeBusiness}
+}
+
 val loadViewModels = module {
-    viewModel{ HomeViewModel(repository = get(), repositoryGenres = get())}
+    viewModel{ HomeViewModel(business = get())}
     viewModel{ DetailsViewModel(repository = get())}
     viewModel{ ListDetailsViewModel(repository = get())}
 }

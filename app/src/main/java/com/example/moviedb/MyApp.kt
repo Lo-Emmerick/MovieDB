@@ -1,6 +1,7 @@
 package com.example.moviedb
 
 import android.app.Application
+import com.example.moviedb.di.loadBusiness
 import com.example.moviedb.di.loadRepositories
 import com.example.moviedb.di.loadViewModels
 import com.example.moviedb.di.movieApi
@@ -18,7 +19,7 @@ class MyApp : Application() {
                 androidLogger()
             }
             androidContext(this@MyApp)
-            modules(movieApi, loadRepositories, loadViewModels)
+            modules(movieApi, loadRepositories, loadViewModels, loadBusiness)
         }
     }
 }
