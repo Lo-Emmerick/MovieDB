@@ -11,6 +11,7 @@ import com.example.moviedb.infrastructure.getMovieRunTime
 import com.example.moviedb.infrastructure.toGenreString
 import com.example.moviedb.model.Cast
 import com.example.moviedb.model.DetailsMovie
+import com.example.moviedb.model.DetailsMovieScreen
 import com.example.moviedb.model.Photo
 import com.example.moviedb.navigation.details.DetailsNavigation.Companion.MOVIE_ID
 import com.example.moviedb.navigation.listDetails.ListDetailsNavigation
@@ -109,7 +110,7 @@ class DetailsActivity : AppCompatActivity() {
         binding.stateLoading.root.isVisible = true
     }
 
-    private fun showSuccessState(detailsMovie: DetailsMovie) {
+    private fun showSuccessState(detailsMovie: DetailsMovieScreen) {
         setContentView(binding.root)
         binding.stateSuccess.isVisible = true
 
@@ -121,9 +122,9 @@ class DetailsActivity : AppCompatActivity() {
                 .into(binding.imageDetails)
         }
         binding.nameFilmDetails.text = detailsMovie.title
-        binding.scoreFilm.text = detailsMovie.vote_average.toString()
-        binding.timeMovie.text = detailsMovie.runtime.getMovieRunTime()
-        binding.textView.text = detailsMovie.genres.toGenreString(3)
+        binding.scoreFilm.text = detailsMovie.vote_average
+        binding.timeMovie.text = detailsMovie.runtime
+        binding.textView.text = detailsMovie.genres
 
         if (detailsMovie.overview.isNullOrBlank()) {
             binding.synopsis.text = "No synopsis available"
