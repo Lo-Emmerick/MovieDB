@@ -1,5 +1,6 @@
 package com.example.moviedb.ui.home
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -53,6 +54,7 @@ class HomeViewModel(
         viewModelScope.launch {
             try {
                 val response = business.searchMovies(movieName,_genres.value)
+                Log.v("emptyInformation", response.toString())
                 _state.value = if (response.isNullOrEmpty()) {
                     HomeState.Empty
                 } else {

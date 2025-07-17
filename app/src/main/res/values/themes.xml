@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style name="Base.Theme.ListCastPhoto" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/red</item>
@@ -17,6 +17,5 @@
     <style name="Base.Theme.Details" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">false</item>
-
     </style>
 </resources>
