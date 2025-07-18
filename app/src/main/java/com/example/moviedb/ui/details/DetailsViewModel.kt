@@ -56,7 +56,7 @@ class DetailsViewModel(
         viewModelScope.launch {
             try {
                 val response = business.getMoviePhotos(movieId)
-                _photoState.value = if (response.backdrops.isNullOrEmpty()){
+                _photoState.value = if (response.backdrops.isNullOrEmpty()) {
                     DetailsPhotoState.Empty
                 } else {
                     DetailsPhotoState.Success(response.backdrops)

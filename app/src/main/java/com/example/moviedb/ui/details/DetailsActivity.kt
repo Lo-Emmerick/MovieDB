@@ -114,7 +114,7 @@ class DetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.stateSuccess.isVisible = true
 
-        if (detailsMovie.backdrop_path.isNullOrEmpty()){
+        if (detailsMovie.backdrop_path.isNullOrEmpty()) {
             binding.imageEmpty.root.isVisible = true
         } else {
             Glide.with(binding.imageDetails)
@@ -133,24 +133,24 @@ class DetailsActivity : AppCompatActivity() {
         }
     }
 
-    private fun setDefaultCast(){
+    private fun setDefaultCast() {
         binding.recyclerViewCast.isVisible = false
         binding.castMessage.isVisible = false
         binding.stateCastLoading.root.isVisible = false
         binding.castContainer.isVisible = true
     }
 
-    private fun showCastError(){
+    private fun showCastError() {
         binding.castMessage.isVisible = true
         binding.castMessage.text = "Cast not found for this movie."
     }
 
-    private fun showCastEmpty(){
+    private fun showCastEmpty() {
         binding.castMessage.isVisible = true
         binding.castMessage.text = "No cast available"
     }
 
-    private fun showCastLoading(){
+    private fun showCastLoading() {
         binding.stateCastLoading.root.isVisible = true
     }
 
@@ -159,23 +159,23 @@ class DetailsActivity : AppCompatActivity() {
         binding.recyclerViewCast.adapter = DetailsCastAdapter(castList)
     }
 
-    private fun setDefaultPhoto(){
+    private fun setDefaultPhoto() {
         binding.recyclerViewPhoto.isVisible = false
         binding.photoMessage.isVisible = false
         binding.statePhotoLoading.root.isVisible = false
     }
 
-    private fun showPhotoError(){
+    private fun showPhotoError() {
         binding.photoMessage.isVisible = true
         binding.photoMessage.text = "Photo not found for this movie."
     }
 
-    private fun showPhotoEmpty(){
+    private fun showPhotoEmpty() {
         binding.photoMessage.isVisible = true
         binding.photoMessage.text = "No photo available"
     }
 
-    private fun showPhotoLoading(){
+    private fun showPhotoLoading() {
         binding.statePhotoLoading.root.isVisible = true
     }
 

@@ -7,12 +7,11 @@ import android.view.inputmethod.InputMethodManager
 import androidx.activity.ComponentActivity
 import androidx.core.view.isVisible
 import com.example.moviedb.databinding.ActivityHomeBinding
-import com.example.moviedb.ui.home.adapter.HomeAdapter
-import com.example.moviedb.ui.home.adapter.HomeListener
-import com.example.moviedb.model.MovieAPI
 import com.example.moviedb.model.MovieScreen
 import com.example.moviedb.navigation.details.DetailsNavigation
 import com.example.moviedb.navigation.details.DetailsNavigationImpl
+import com.example.moviedb.ui.home.adapter.HomeAdapter
+import com.example.moviedb.ui.home.adapter.HomeListener
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeActivity : ComponentActivity(), HomeListener {
@@ -61,7 +60,7 @@ class HomeActivity : ComponentActivity(), HomeListener {
             }
         }
 
-        binding.appName.setOnClickListener{
+        binding.appName.setOnClickListener {
             binding.radioGroup.isVisible = true
             binding.searchInput.isVisible = false
             viewModel.getNowPlaying()
@@ -80,7 +79,7 @@ class HomeActivity : ComponentActivity(), HomeListener {
             }
         }
 
-        viewModel.genres.observe(this){
+        viewModel.genres.observe(this) {
             viewModel.getNowPlaying()
         }
     }

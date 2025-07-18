@@ -12,14 +12,20 @@ class DetailsBusinessImpl(
     private val repository: DetailsRepository
 ) : DetailsBusiness {
     private fun getMovieDetailsScreen(detailsMovie: DetailsMovie): DetailsMovieScreen {
+        val backdropPath =
+            if (detailsMovie.backdrop_path.isNullOrEmpty()) "" else detailsMovie.backdrop_path
+        val overview = if (detailsMovie.overview.isNullOrEmpty()) "" else detailsMovie.overview
+        val posterPath =
+            if (detailsMovie.poster_path.isNullOrEmpty()) "" else detailsMovie.poster_path
+
         return DetailsMovieScreen(
-            poster_path = detailsMovie.poster_path,
+            poster_path = posterPath,
             title = detailsMovie.title,
-            backdrop_path = detailsMovie.backdrop_path,
-            vote_average = detailsMovie.vote_average.toString().substring(0,3),
+            backdrop_path = backdropPath,
+            vote_average = detailsMovie.vote_average.toString().substring(0, 3),
             runtime = detailsMovie.runtime.getMovieRunTime(),
             genres = detailsMovie.genres.toGenreString(),
-            overview = detailsMovie.overview
+            overview = overview
         )
     }
 

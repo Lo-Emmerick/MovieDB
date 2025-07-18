@@ -19,14 +19,17 @@ class HomeBusinessImpl(
                 genres?.find { it.id == id }?.name
             } ?: ""
 
+            val date = if (item.release_date.isNullOrEmpty()) "xxxx" else item.release_date
+            val posterPath = if (item.poster_path.isNullOrEmpty()) "" else item.poster_path
+
             movieScreen.add(
                 MovieScreen(
                     id = item.id,
                     title = item.title,
                     genre = genre.replace(" ", ""),
-                    release_date = item.release_date,
+                    release_date = date,
                     vote_average = item.vote_average,
-                    poster_path = item.poster_path ?: ""
+                    poster_path = posterPath
                 )
             )
         }
@@ -43,7 +46,10 @@ class HomeBusinessImpl(
         return getMovieScreen(response.results, genreList)
     }
 
-    override suspend fun searchMovies(movieName: String, genreList: List<Genre>?): List<MovieScreen> {
+    override suspend fun searchMovies(
+        movieName: String,
+        genreList: List<Genre>?
+    ): List<MovieScreen> {
         val response = repository.searchMovies(movieName)
         return getMovieScreen(response.results, genreList)
     }
