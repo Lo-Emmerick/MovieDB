@@ -1,5 +1,6 @@
 package com.example.moviedb.ui.details
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -28,8 +29,12 @@ class DetailsViewModel(
         viewModelScope.launch {
             try {
                 val response = business.getMovieDetails(movieId)
+                Log.v("teste11", response.toString())
+
                 _state.value = DetailsState.Success(response)
             } catch (e: Exception) {
+                Log.v("teste11", e.toString())
+
                 _state.value = DetailsState.Error
             }
         }
