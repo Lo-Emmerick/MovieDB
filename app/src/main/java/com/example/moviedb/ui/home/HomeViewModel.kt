@@ -18,9 +18,14 @@ class HomeViewModel(
     val genres: LiveData<List<Genre>> = _genres
 
     fun getGenres() {
+        _state.value = HomeState.Loading
         viewModelScope.launch {
-            val response = business.getGenres()
-            _genres.value = response.genres
+            try {
+                val response = business.getGenres()
+                _genres.value = response.genres
+            } catch (e: Exception) {
+                _state.value = HomeState.Error
+            }
         }
     }
 
