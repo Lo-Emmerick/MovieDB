@@ -14,6 +14,5 @@ Desenvolvido com arquitetura MVVM, Retrofit e Room.
 
 ## 💻 Como rodar o projeto
 - Clone o repositório
-git clone https://github.com/seunome/seuprojeto.git
 - Abra o projeto no Android Studio
 - Rode o app no emulador ou dispositivo
