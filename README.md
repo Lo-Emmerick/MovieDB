@@ -18,8 +18,9 @@ Desenvolvido com arquitetura MVVM, Retrofit e Room.
 - Abra o projeto no Android Studio
 - Rode o app no emulador ou dispositivo
 
-![Vídeo do WhatsApp de 2025-07-22 à(s) 19 44 30_51733069](https://github.com/user-attachments/assets/dd3342af-1575-448b-be6b-d20747998132)
-![Vídeo do WhatsApp de 2025-07-22 à(s) 19 45 51_f47f1665](https://github.com/user-attachments/assets/3082d667-09a4-4f02-8635-48110410ed99)
-![Vídeo do WhatsApp de 2025-07-22 à(s) 19 47 15_267dc0de](https://github.com/user-attachments/assets/d29e37a2-7e98-4c0c-b735-6c0d4e253c18)
-![Vídeo do WhatsApp de 2025-07-22 à(s) 19 47 56_53be73f4](https://github.com/user-attachments/assets/4e17fb5d-77ab-4000-91a7-626a864e9190)
-![Vídeo do WhatsApp de 2025-07-22 à(s) 19 49 50_a9316791](https://github.com/user-attachments/assets/a7a310ca-268b-4076-8111-0b1cae2bcaca)
+![Vídeo do WhatsApp de 2025-07-22 à(s) 19 44 30_51733069 (1)](https://github.com/user-attachments/assets/195db8a1-dfa5-4cd0-b220-9ca6162f351b)
+![Vídeo do WhatsApp de 2025-07-22 à(s) 19 45 51_f47f1665](https://github.com/user-attachments/assets/05ca91e1-e951-4757-b332-583715559053)
+![Vídeo do WhatsApp de 2025-07-22 à(s) 19 46 25_ffbf972d](https://github.com/user-attachments/assets/0c38af4e-e059-49b0-a149-b9962ac964f4)
+![Vídeo do WhatsApp de 2025-07-22 à(s) 19 47 15_267dc0de](https://github.com/user-attachments/assets/654f7561-6761-43c7-abb8-83dc09f128bd)
+![Vídeo do WhatsApp de 2025-07-22 à(s) 19 47 56_53be73f4](https://github.com/user-attachments/assets/f6c5a437-58b0-4518-b22a-36f936dc3873)
+![Vídeo do WhatsApp de 2025-07-22 à(s) 19 49 50_a9316791](https://github.com/user-attachments/assets/4f3e5fb0-a4ff-4a34-9479-2cea41249c13)
