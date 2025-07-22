@@ -29,12 +29,8 @@ class DetailsViewModel(
         viewModelScope.launch {
             try {
                 val response = business.getMovieDetails(movieId)
-                Log.v("teste11", response.toString())
-
                 _state.value = DetailsState.Success(response)
             } catch (e: Exception) {
-                Log.v("teste11", e.toString())
-
                 _state.value = DetailsState.Error
             }
         }
