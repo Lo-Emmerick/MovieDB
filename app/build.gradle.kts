@@ -39,6 +39,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.mockk)
+    implementation(libs.coroutines)
     implementation(libs.koinnavigation)
     implementation(libs.koinworkmanager)
     implementation(libs.koincompat)
