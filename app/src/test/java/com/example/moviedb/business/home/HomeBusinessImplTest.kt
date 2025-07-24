@@ -64,4 +64,79 @@ class HomeBusinessImplTest {
 
         assertEquals("xxxx", result.first().release_date)
     }
+
+    @Test
+    fun `getNowPlaying deve retornar uma lista de MovieScreen com diferentes objetos`() = runTest {
+        val genres = listOf(Genre(2, "Drama"))
+
+        val movieList = MovieList(
+            results = listOf(
+                movie,
+                movie.copy(
+                    release_date = "",
+                ),
+            )
+        )
+
+        coEvery { homeRepository.getNowPlaying() } returns movieList
+
+        val result = business.getNowPlaying(genres)
+
+        assertEquals("2024-06-01", result.first().release_date)
+        assertEquals(10, result.first().id)
+        assertEquals("Filme Sem Gênero", result.first().title)
+        assertEquals("Drama", result.first().genre)
+        //assertEquals(5.5, result.first().vote_average)
+        assertEquals("xxxx", result[1].release_date)
+    }
+
+    @Test
+    fun `getUpcoming deve retornar uma lista de MovieScreen`() = runTest {
+        val genres = listOf(Genre(2, "Drama"))
+
+        val movieList = MovieList(
+            results = listOf(
+                movie,
+            )
+        )
+
+        coEvery { homeRepository.getUpcoming() } returns movieList
+
+        val result = business.getUpcoming(genres)
+
+        assertEquals(1, result.size)
+    }
+
+    @Test
+    fun `searchMovies deve retornar uma lista de MovieScreen`() = runTest {
+        val genres = listOf(Genre(2, "Drama"))
+        val movieName = "Filme Sem Gênero"
+
+        val movieList = MovieList(
+            results = listOf(
+                movie,
+            )
+        )
+
+        coEvery { homeRepository.searchMovies(any()) } returns movieList
+
+        val result = business.searchMovies(movieName, genres)
+
+        assertEquals(1, result.size)
+    }
+
+    @Test
+    fun `getGenres deve retornar uma lista de GenreMovie`() = runTest {
+
+        val genreMovie = GenreMovie(
+            genres = listOf(
+                Genre(id = 2, name = "Drama")
+            )
+        )
+        coEvery { genresRepository.getGenres() } returns genreMovie
+        val result = business.getGenres()
+        assertEquals(1,result.genres.size)
+        assertEquals(2,result.genres.first().id)
+        assertEquals("Drama",result.genres.first().name)
+    }
 }
