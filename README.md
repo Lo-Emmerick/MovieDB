@@ -9,10 +9,16 @@ Desenvolvido com arquitetura MVVM, Retrofit e Room.
 - Busca por título de filme
 - Modo Light e modo Dark
 
-## 🛠️ Tecnologias utilizadas
-- Kotlin
-- MVVM
-- TMDB API
+## 🛠️ App desenvolvido para estudar conceitos do desenvolvimento Android como:
+-Criação de layouts com XML
+-Gerenciamento de dependências do gradle
+-Princípios de Clean Code
+-Android SDK (Lifecycle, LiveData, ViewModel)
+-Injeção de dependencias com Koin
+-Design pattner
+-Aplicação de conceitos S.O.L.I.D
+-Testes unitários e de interface
+-Consumo de API REST utilizando Retrofit e Gson.
 
 ## 💻 Como rodar o projeto
 - Clone o repositório
