@@ -10,15 +10,15 @@ Desenvolvido com arquitetura MVVM, Retrofit e Room.
 - Modo Light e modo Dark
 
 ## 🛠️ App desenvolvido para estudar conceitos do desenvolvimento Android como:
--Criação de layouts com XML
--Gerenciamento de dependências do gradle
--Princípios de Clean Code
--Android SDK (Lifecycle, LiveData, ViewModel)
--Injeção de dependencias com Koin
--Design pattner
--Aplicação de conceitos S.O.L.I.D
--Testes unitários e de interface
--Consumo de API REST utilizando Retrofit e Gson.
+- Criação de layouts com XML
+- Gerenciamento de dependências do gradle
+- Princípios de Clean Code
+- Android SDK (Lifecycle, LiveData, ViewModel)
+- Injeção de dependencias com Koin
+- Design pattner
+- Aplicação de conceitos S.O.L.I.D
+- Testes unitários e de interface
+- Consumo de API REST utilizando Retrofit e Gson.
 
 ## 💻 Como rodar o projeto
 - Clone o repositório
