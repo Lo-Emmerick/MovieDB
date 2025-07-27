@@ -28,7 +28,7 @@ class HomeBusinessImpl(
                     title = item.title,
                     genre = genre.replace(" ", ""),
                     release_date = date,
-                    vote_average = item.vote_average + 1,
+                    vote_average = item.vote_average,
                     poster_path = posterPath
                 )
             )

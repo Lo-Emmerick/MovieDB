@@ -97,6 +97,10 @@ class HomeBusinessImplTest {
         val movieList = MovieList(
             results = listOf(
                 movie,
+                movie.copy(
+                    poster_path = "",
+                    genre_ids = listOf()
+                ),
             )
         )
 
@@ -104,7 +108,7 @@ class HomeBusinessImplTest {
 
         val result = business.getUpcoming(genres)
 
-        assertEquals(1, result.size)
+        assertEquals(2, result.size)
     }
 
     @Test
