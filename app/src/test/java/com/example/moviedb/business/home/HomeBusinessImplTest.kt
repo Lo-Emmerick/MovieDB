@@ -1,6 +1,9 @@
 package com.example.moviedb.business.home
 
-import com.example.moviedb.model.*
+import com.example.moviedb.model.Genre
+import com.example.moviedb.model.GenreMovie
+import com.example.moviedb.model.MovieAPI
+import com.example.moviedb.model.MovieList
 import com.example.moviedb.repository.genres.GenresRepository
 import com.example.moviedb.repository.home.HomeRepository
 import io.mockk.coEvery
@@ -15,19 +18,19 @@ class HomeBusinessImplTest {
     private val genresRepository: GenresRepository = mockk()
     private lateinit var business: HomeBusiness
 
+    @Before
+    fun setup() {
+        business = HomeBusinessImpl(homeRepository, genresRepository)
+    }
+
     private val movie = MovieAPI(
         id = 10,
-        title = "Filme Sem Gênero",
+        title = "Coraline",
         genre_ids = listOf(2),
         release_date = "2024-06-01",
         vote_average = 5.5,
         poster_path = "poster_path"
     )
-
-    @Before
-    fun setup() {
-        business = HomeBusinessImpl(homeRepository, genresRepository)
-    }
 
     @Test
     fun `getNowPlaying deve retornar uma lista de MovieScreen`() = runTest {
@@ -84,9 +87,8 @@ class HomeBusinessImplTest {
 
         assertEquals("2024-06-01", result.first().release_date)
         assertEquals(10, result.first().id)
-        assertEquals("Filme Sem Gênero", result.first().title)
+        assertEquals("Coraline", result.first().title)
         assertEquals("Drama", result.first().genre)
-        //assertEquals(5.5, result.first().vote_average)
         assertEquals("xxxx", result[1].release_date)
     }
 
@@ -114,7 +116,7 @@ class HomeBusinessImplTest {
     @Test
     fun `searchMovies deve retornar uma lista de MovieScreen`() = runTest {
         val genres = listOf(Genre(2, "Drama"))
-        val movieName = "Filme Sem Gênero"
+        val movieName = "Coraline"
 
         val movieList = MovieList(
             results = listOf(
@@ -139,8 +141,8 @@ class HomeBusinessImplTest {
         )
         coEvery { genresRepository.getGenres() } returns genreMovie
         val result = business.getGenres()
-        assertEquals(1,result.genres.size)
-        assertEquals(2,result.genres.first().id)
-        assertEquals("Drama",result.genres.first().name)
+        assertEquals(1, result.genres.size)
+        assertEquals(2, result.genres.first().id)
+        assertEquals("Drama", result.genres.first().name)
     }
 }
