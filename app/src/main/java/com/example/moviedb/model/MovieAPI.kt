@@ -1,7 +1,5 @@
 package com.example.moviedb.model
 
-@kotlinx.serialization.Serializable
-
 data class MovieAPI(
     val id: Int,
     val title: String,

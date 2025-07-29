@@ -8,6 +8,8 @@ android {
     namespace = "com.example.moviedb"
     compileSdk = 35
 
+    packagingOptions { resources.excludes.add("META-INF/*") }
+
     defaultConfig {
         applicationId = "com.example.moviedb"
         minSdk = 24

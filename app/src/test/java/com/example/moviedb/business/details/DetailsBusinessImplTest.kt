@@ -72,17 +72,22 @@ class DetailsBusinessImplTest {
                     profile_path = "profile_path",
                     name = "Emma Watson",
                     character = "Hermione Granger"
+                ),
+                Cast(
+                    profile_path = "",
+                    name = "",
+                    character = ""
                 )
             )
         )
 
         val results = business.getMovieCrew(1)
 
-        assertEquals("", results.cast.first().profile_path)
+        assertEquals("", results.cast[1].profile_path)
         assertEquals("profile_path", results.cast.first().profile_path)
-        assertEquals("", results.cast.first().name)
+        assertEquals("", results.cast[1].name)
         assertEquals("Emma Watson", results.cast.first().name)
-        assertEquals("", results.cast.first().character)
+        assertEquals("", results.cast[1].character)
         assertEquals("Hermione Granger", results.cast.first().character)
     }
 
@@ -92,13 +97,16 @@ class DetailsBusinessImplTest {
             backdrops = listOf(
                 Photo(
                     file_path = "file_path",
+                ),
+                Photo(
+                    file_path = "",
                 )
             )
         )
 
         val result = business.getMoviePhotos(1)
 
-        assertEquals("", result.backdrops.first().file_path)
+        assertEquals("", result.backdrops[1].file_path)
         assertEquals("file_path", result.backdrops.first().file_path)
     }
 }
