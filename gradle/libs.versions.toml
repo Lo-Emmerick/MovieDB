@@ -19,7 +19,9 @@ lifecycleviewmodel = "2.6.1"
 lifecycleviedata = "2.6.1"
 koin = "3.2.0"
 mockk = "1.13.10"
-coroutines = "1.8.0"
+coroutines = "1.7.3"
+androidx = "1.5.0"
+coretesting = "2.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -44,6 +46,8 @@ koinworkmanager = { group = "io.insert-koin", name = "koin-androidx-workmanager"
 koinnavigation = { group = "io.insert-koin", name = "koin-androidx-navigation", version.ref = "koin" }
 mockk = {group = "io.mockk", name = "mockk", version.ref = "mockk"}
 coroutines = {group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines"}
+androidx-test-core = { group = "androidx.test", name = "core", version.ref = "androidx" }
+coretesting = { group = "androidx.arch.core", name = "core-testing", version.ref = "coretesting" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

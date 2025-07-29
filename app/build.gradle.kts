@@ -10,6 +10,7 @@ android {
 
     packagingOptions { resources.excludes.add("META-INF/*") }
 
+
     defaultConfig {
         applicationId = "com.example.moviedb"
         minSdk = 24
@@ -41,6 +42,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.coretesting)
     implementation(libs.mockk)
     implementation(libs.coroutines)
     implementation(libs.koinnavigation)
@@ -61,6 +63,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.core)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
