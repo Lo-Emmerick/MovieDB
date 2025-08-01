@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import com.example.moviedb.business.home.HomeBusiness
 import com.example.moviedb.model.Genre
 import com.example.moviedb.model.GenreMovie
-import com.example.moviedb.model.MovieAPI
 import com.example.moviedb.model.MovieScreen
 import io.mockk.coEvery
 import io.mockk.mockk
@@ -41,7 +40,7 @@ class HomeViewModelTest {
     }
 
     @Test
-    fun `getGenres deve armazenar uma lista de generos` () = runTest {
+    fun `getGenres deve armazenar uma lista de generos`() = runTest {
         val expectedGenres = listOf(Genre(1, "Acao"), Genre(2, "Drama"))
         coEvery { business.getGenres() } returns GenreMovie(expectedGenres)
 
@@ -53,7 +52,7 @@ class HomeViewModelTest {
     }
 
     @Test
-    fun `getGenres deve definir o estado de erro` () = runTest {
+    fun `getGenres deve definir o estado de erro`() = runTest {
         coEvery { business.getGenres() } throws Exception()
 
         viewModel.getGenres()
@@ -63,10 +62,17 @@ class HomeViewModelTest {
     }
 
     @Test
-    fun `getNowPlaying deve armazenar uma lista de MovieScreen` () = runTest {
+    fun `getNowPlaying deve armazenar uma lista de MovieScreen`() = runTest {
         val genres = listOf(Genre(1, "Action"))
         val movies = listOf(
-            MovieScreen(1, "Now Playing Movie", "Drama", "2024-01-01", 5.5, "poster_path")
+            MovieScreen(
+                id = 1,
+                title = "Now Playing Movie",
+                genre = "Drama",
+                release_date = "2024-01-01",
+                vote_average = 5.5,
+                poster_path = "poster_path"
+            )
         )
 
         viewModel = HomeViewModel(business).apply {
@@ -82,7 +88,7 @@ class HomeViewModelTest {
     }
 
     @Test
-    fun `getNowPlaying deve definir o estado de erro` () = runTest {
+    fun `getNowPlaying deve definir o estado de erro`() = runTest {
         coEvery { business.getNowPlaying(any()) } throws Exception()
 
         viewModel.getNowPlaying()
@@ -92,10 +98,17 @@ class HomeViewModelTest {
     }
 
     @Test
-    fun `getUpComing deve retornar uma lista de MovieScreen` () = runTest {
+    fun `getUpComing deve retornar uma lista de MovieScreen`() = runTest {
         val genres = listOf(Genre(1, "Action"))
         val movies = listOf(
-            MovieScreen(1, "Now Playing Movie", "Drama", "2024-01-01", 5.5, "poster_path")
+            MovieScreen(
+                id = 1,
+                title = "Now Playing Movie",
+                genre = "Drama",
+                release_date = "2024-01-01",
+                vote_average = 5.5,
+                poster_path = "poster_path"
+            )
         )
 
         viewModel = HomeViewModel(business).apply {
@@ -111,7 +124,7 @@ class HomeViewModelTest {
     }
 
     @Test
-    fun `getUpComing deve definir o estado de erro` () = runTest {
+    fun `getUpComing deve definir o estado de erro`() = runTest {
         coEvery { business.getUpcoming(any()) } throws Exception()
 
         viewModel.getUpComing()
@@ -121,11 +134,18 @@ class HomeViewModelTest {
     }
 
     @Test
-    fun `searchMovies deve retornar uma lista de MovieScreen` () = runTest {
+    fun `searchMovies deve retornar uma lista de MovieScreen`() = runTest {
         val genres = listOf(Genre(1, "Action"))
         val query = "Coraline"
         val movies = listOf(
-            MovieScreen(1, "Now Playing Movie", "Drama", "2024-01-01", 5.5, "poster_path")
+            MovieScreen(
+                id = 1,
+                title = "Now Playing Movie",
+                genre = "Drama",
+                release_date = "2024-01-01",
+                vote_average = 5.5,
+                poster_path = "poster_path"
+            )
         )
 
         viewModel = HomeViewModel(business).apply {
@@ -141,7 +161,24 @@ class HomeViewModelTest {
     }
 
     @Test
-    fun `searchMovies deve definir o estado de erro` () = runTest {
+    fun `searchMovies deve retornar estado vazio`() = runTest {
+        val genres = listOf(Genre(1, "Action"))
+        val query = "Coraline"
+
+        viewModel = HomeViewModel(business).apply {
+            (this.genres as MutableLiveData).value = genres
+        }
+
+        coEvery { business.searchMovies(query, genres) } returns emptyList()
+
+        viewModel.searchMovies(query)
+        advanceUntilIdle()
+
+        assertEquals(HomeState.Empty, viewModel.state.value)
+    }
+
+    @Test
+    fun `searchMovies deve definir o estado de erro`() = runTest {
         val genres = listOf(Genre(1, "Terror"))
         val query = "Coraline"
 
