@@ -1,6 +1,6 @@
 #  🎬 Movie DB
 Aplicativo Android para exibição de filmes utilizando a API da TMDB.  
-Desenvolvido com arquitetura MVVM, Retrofit e Room.
+Desenvolvido com arquitetura MVVM e Retrofit.
 
 
 ## 🚀 Funcionalidades
